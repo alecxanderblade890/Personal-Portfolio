@@ -1,3 +1,5 @@
+"use client";
+
 import { Button } from "@/components/ui/button"
 import { Card, CardContent } from "@/components/ui/card"
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
@@ -6,8 +8,67 @@ import { Github, Linkedin, Mail, Download, ExternalLink, Code, Cpu, Globe, Smart
 import Image from "next/image"
 import Link from "next/link"
 import { ThemeToggle } from "@/components/theme-toggle"
+import { useForm } from "react-hook-form"
+import { zodResolver } from "@hookform/resolvers/zod"
+import * as z from "zod"
+import { useState } from "react"
+
+// Form schema for validation
+const formSchema = z.object({
+  name: z.string().min(2, {
+    message: "Name must be at least 2 characters.",
+  }),
+  email: z.string().email({
+    message: "Please enter a valid email address.",
+  }),
+  message: z.string().min(10, {
+    message: "Message must be at least 10 characters.",
+  }),
+});
 
 export default function Home() {
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [showSuccess, setShowSuccess] = useState(false);
+
+  const form = useForm<z.infer<typeof formSchema>>({
+    resolver: zodResolver(formSchema),
+    defaultValues: {
+      name: '',
+      email: '',
+      message: '',
+    },
+  });
+
+  async function onSubmit(data: z.infer<typeof formSchema>) {
+    console.log('Form submitted with data:', data);
+    setIsSubmitting(true);
+    try {
+      const response = await fetch('/api/contact', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(data),
+      });
+
+      const result = await response.json();
+      console.log('API Response:', { status: response.status, result });
+
+      if (response.ok) {
+        form.reset();
+        setShowSuccess(true);
+        setTimeout(() => setShowSuccess(false), 5000); // Hide after 5 seconds
+      } else {
+        throw new Error(result.error || 'Failed to send message');
+      }
+    } catch (error) {
+      console.error('Form submission error:', error);
+      // Optionally show error state here if needed
+    } finally {
+      setIsSubmitting(false);
+    }
+  }
+
   return (
     <div className="flex min-h-screen flex-col">
       {/* Header */}
@@ -679,7 +740,7 @@ export default function Home() {
                 <Card className="gradient-border">
                   <CardContent className="p-6 space-y-4">
                     <h3 className="text-xl font-bold">Send Me a Message</h3>
-                    <form className="space-y-4">
+                    <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-4">
                       <div className="grid gap-4">
                         <div className="grid gap-2">
                           <label htmlFor="name" className="text-sm font-medium">
@@ -689,7 +750,11 @@ export default function Home() {
                             id="name"
                             className="flex h-10 w-full rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50"
                             placeholder="Your name"
+                            {...form.register('name')}
                           />
+                          {form.formState.errors.name && (
+                            <p className="text-sm text-red-500">{form.formState.errors.name.message}</p>
+                          )}
                         </div>
                         <div className="grid gap-2">
                           <label htmlFor="email" className="text-sm font-medium">
@@ -700,7 +765,11 @@ export default function Home() {
                             type="email"
                             className="flex h-10 w-full rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50"
                             placeholder="Your email"
+                            {...form.register('email')}
                           />
+                          {form.formState.errors.email && (
+                            <p className="text-sm text-red-500">{form.formState.errors.email.message}</p>
+                          )}
                         </div>
                         <div className="grid gap-2">
                           <label htmlFor="message" className="text-sm font-medium">
@@ -710,13 +779,42 @@ export default function Home() {
                             id="message"
                             className="flex min-h-[120px] w-full rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50"
                             placeholder="Your message"
+                            {...form.register('message')}
                           />
+                          {form.formState.errors.message && (
+                            <p className="text-sm text-red-500">{form.formState.errors.message.message}</p>
+                          )}
                         </div>
                       </div>
-                      <Button className="w-full bg-gradient-to-r from-vibrant-purple to-vibrant-blue hover:opacity-90 transition-opacity">
-                        <Zap className="mr-2 h-4 w-4" />
-                        Send Message
-                      </Button>
+                      <div className="space-y-2">
+                        <button
+                          type="submit"
+                          disabled={isSubmitting}
+                          className="group flex items-center justify-center gap-2 h-10 px-4 text-sm font-medium text-white bg-blue-600 rounded-md hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 disabled:opacity-50 disabled:cursor-not-allowed w-full"
+                        >
+                          {isSubmitting ? (
+                            <>
+                              <svg className="animate-spin -ml-1 mr-2 h-4 w-4 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+                                <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4"></circle>
+                                <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
+                              </svg>
+                              Sending...
+                            </>
+                          ) : (
+                            <>
+                              Send Message
+                              <svg className="w-4 h-4 transition-transform group-hover:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" />
+                              </svg>
+                            </>
+                          )}
+                        </button>
+                        {showSuccess && (
+                          <div className="text-center text-sm text-white-600 dark:text-green-400 transition-opacity duration-300">
+                            I'll get back to you ASAP! Thank you for contacting.
+                          </div>
+                        )}
+                      </div>
                     </form>
                   </CardContent>
                 </Card>

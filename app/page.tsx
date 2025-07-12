@@ -247,9 +247,9 @@ export default function Home() {
                     "React",
                     "Next.js",
                     "Node.js",
-                    "HTML/CSS",
                     "Tailwind CSS",
-                    "Firebase",
+                    "Laravel",
+                    "PHP"
                   ].map((skill) => (
                     <div
                       key={skill}
@@ -293,7 +293,7 @@ export default function Home() {
               </TabsContent>
               <TabsContent value="apps" className="mt-6 space-y-6">
                 <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
-                  {["Android Studio", "Flutter", "Java", "Kotlin", "Firebase"].map((skill) => (
+                  {["Android Studio", "Flutter", "Java", "Firebase"].map((skill) => (
                     <div
                       key={skill}
                       className="flex items-center gap-2 p-3 border rounded-lg hover:border-vibrant-teal transition-colors"
@@ -324,132 +324,10 @@ export default function Home() {
                 A selection of my recent work across web development, robotics, and application development.
               </p>
             </div>
-
             <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
               {/* Project 1 */}
-              <Card className="overflow-hidden hover:shadow-lg transition-shadow gradient-border">
-                <div className="relative h-48">
-                  <Image
-                    src="/images/vita_logo.jpeg"
-                    alt="VITA(VIrtual Teaching Application)"
-                    fill
-                    className="object-cover"
-                  />
-                </div>
-                <CardContent className="p-6 space-y-4">
-                  <div className="space-y-2">
-                    <div className="flex items-center justify-between">
-                      <h3 className="font-bold text-xl">VITA(VIrtual Teaching Application)</h3>
-                      <Badge className="bg-vibrant-teal hover:bg-vibrant-teal/90">Mobile</Badge>
-                    </div>
-                    <p className="text-muted-foreground">
-                      A mobile application designed to teach students their lessons in school digitally. Made when I was
-                      first starting to program mobile apps.
-                    </p>
-                  </div>
-                  <div className="flex flex-wrap gap-2">
-                    <Badge variant="secondary">Android Studio</Badge>
-                    <Badge variant="secondary">Java</Badge>
-                  </div>
-                  <div className="flex gap-2">
-                    <Button variant="outline" size="sm" className="gap-1" asChild>
-                      <Link href="https://github.com/alecxanderblade890/VITA" target="_blank">
-                        <ExternalLink className="h-4 w-4" />
-                        Demo
-                      </Link>
-                    </Button>
-                    <Button variant="outline" size="sm" className="gap-1" asChild>
-                      <Link href="https://github.com/alecxanderblade890/VITA" target="_blank">
-                        <Github className="h-4 w-4" />
-                        Code
-                      </Link>
-                    </Button>
-                  </div>
-                </CardContent>
-              </Card>
-
-              {/* Project 2 */}
-              <Card className="overflow-hidden hover:shadow-lg transition-shadow gradient-border">
-                <div className="relative h-48">
-                  <Image
-                    src="/images/siquijor_logo.png"
-                    alt="Siquijor Promotional Site"
-                    fill
-                    className="object-cover"
-                  />
-                </div>
-                <CardContent className="p-6 space-y-4">
-                  <div className="space-y-2">
-                    <div className="flex items-center justify-between">
-                      <h3 className="font-bold text-xl">Siquijor Promotional Site</h3>
-                      <Badge className="bg-vibrant-purple hover:bg-vibrant-purple/90">Web</Badge>
-                    </div>
-                    <p className="text-muted-foreground">
-                      An informational website to promote the beauty of Siquijor and to attract tourists to visit.
-                    </p>
-                  </div>
-                  <div className="flex flex-wrap gap-2">
-                    <Badge variant="secondary">HTML</Badge>
-                    <Badge variant="secondary">CSS</Badge>
-                    <Badge variant="secondary">JS</Badge>
-                  </div>
-                  <div className="flex gap-2">
-                    <Button variant="outline" size="sm" className="gap-1" asChild>
-                      <Link href="https://vigilant-lichterman-dba4ac.netlify.app/" target="_blank">
-                        <ExternalLink className="h-4 w-4" />
-                        Demo
-                      </Link>
-                    </Button>
-                    <Button variant="outline" size="sm" className="gap-1" asChild>
-                      <Link href="https://github.com/alecxanderblade890/Siquijor-Promotion-Site" target="_blank">
-                        <Github className="h-4 w-4" />
-                        Code
-                      </Link>
-                    </Button>
-                  </div>
-                </CardContent>
-              </Card>
-
-              {/* Project 3 */}
-              <Card className="overflow-hidden hover:shadow-lg transition-shadow gradient-border">
-                <div className="relative h-48">
-                  <Image src="/images/badyet_logo.png" alt="Badyet" fill className="object-cover" />
-                </div>
-                <CardContent className="p-6 space-y-4">
-                  <div className="space-y-2">
-                    <div className="flex items-center justify-between">
-                      <h3 className="font-bold text-xl">Badyet</h3>
-                      <Badge className="bg-vibrant-teal hover:bg-vibrant-teal/90">Mobile</Badge>
-                    </div>
-                    <p className="text-muted-foreground">
-                      A budgeting app for students to manage their everyday expenses.
-                    </p>
-                  </div>
-                  <div className="flex flex-wrap gap-2">
-                    <Badge variant="secondary">Dart</Badge>
-                    <Badge variant="secondary">Flutter</Badge>
-                    <Badge variant="secondary">Hive</Badge>
-                  </div>
-                  <div className="flex gap-2">
-                    <Button variant="outline" size="sm" className="gap-1" asChild>
-                      <Link href="https://github.com/alecxanderblade890/Badyet" target="_blank">
-                        <ExternalLink className="h-4 w-4" />
-                        Demo
-                      </Link>
-                    </Button>
-                    <Button variant="outline" size="sm" className="gap-1" asChild>
-                      <Link href="https://github.com/alecxanderblade890/Badyet" target="_blank">
-                        <Github className="h-4 w-4" />
-                        Code
-                      </Link>
-                    </Button>
-                  </div>
-                </CardContent>
-              </Card>
-
-              {/* Project 4 */}
-              <Card className="overflow-hidden hover:shadow-lg transition-shadow gradient-border">
-                <div className="relative h-48">
+            <Card className="overflow-hidden hover:shadow-lg transition-shadow gradient-border">
+                <div className="relative aspect-video">
                   <Image
                     src="/images/spotify_ai_logo.png"
                     alt="Spotify Playlist Generator"
@@ -490,35 +368,50 @@ export default function Home() {
                 </CardContent>
               </Card>
 
-              {/* Project 5 */}
+              {/* Project 2 */}
               <Card className="overflow-hidden hover:shadow-lg transition-shadow gradient-border">
-                <div className="relative h-48">
-                  <Image src="/images/mata_logo.png" alt="MATA" fill className="object-cover" />
+                <div className="relative aspect-video">
+                  <Image src="/images/inkwell_logo.png" alt="Inkwell" fill className="object-cover" />
                 </div>
                 <CardContent className="p-6 space-y-4">
                   <div className="space-y-2">
                     <div className="flex items-center justify-between">
-                      <h3 className="font-bold text-xl">MATA</h3>
-                      <Badge className="bg-vibrant-orange hover:bg-vibrant-orange/90">Robotics</Badge>
+                      <h3 className="font-bold text-xl">Inkwell</h3>
+                      <Badge className="bg-vibrant-orange hover:bg-vibrant-orange/90">Web App</Badge>
                     </div>
                     <p className="text-muted-foreground">
-                      A mechanical eye powered by computer vision using Arduino. Uses computer vision to look at and
-                      track the face of a person.
+                    Inkwell is an AI-powered web application built with Laravel that generates professional, personalized cover letters in seconds. 
+                    Simply upload your resume (PDF), paste a job description, and choose your preferred writing style.
                     </p>
                   </div>
                   <div className="flex flex-wrap gap-2">
-                    <Badge variant="secondary">Arduino</Badge>
-                    <Badge variant="secondary">OpenCV</Badge>
-                    <Badge variant="secondary">Python</Badge>
+                    <Badge variant="secondary">Laravel</Badge>
+                    <Badge variant="secondary">PHP</Badge>
+                    <Badge variant="secondary">Railway</Badge>
+                    <Badge variant="secondary">Gemini API</Badge>
                   </div>
                   <div className="flex gap-2">
+                  </div>
+                  <div className="flex gap-2">
+                    <Button variant="outline" size="sm" className="gap-1" asChild>
+                      <Link href="https://inkwell-production-94b8.up.railway.app/" target="_blank">
+                        <ExternalLink className="h-4 w-4" />
+                        Demo
+                      </Link>
+                    </Button>
+                    <Button variant="outline" size="sm" className="gap-1" asChild>
+                      <Link href="https://github.com/alecxanderblade890/Inkwell.git" target="_blank">
+                        <Github className="h-4 w-4" />
+                        Code
+                      </Link>
+                    </Button>
                   </div>
                 </CardContent>
               </Card>
 
-              {/* Project 6 */}
+              {/* Project 3 */}
               <Card className="overflow-hidden hover:shadow-lg transition-shadow gradient-border">
-                <div className="relative h-48">
+                <div className="relative aspect-video">
                   <Image src="/images/neurowarn_logo.png" alt="Neurowarn" fill className="object-cover" />
                 </div>
                 <CardContent className="p-6 space-y-4">
@@ -554,8 +447,127 @@ export default function Home() {
                   </div>
                 </CardContent>
               </Card>
-            </div>
+              {/* Project 4 */}
+              <Card className="overflow-hidden hover:shadow-lg transition-shadow gradient-border">
+                <div className="relative aspect-video">
+                  <Image
+                    src="/images/vita_logo.jpeg"
+                    alt="VITA(VIrtual Teaching Application)"
+                    fill
+                    className="object-cover"
+                  />
+                </div>
+                <CardContent className="p-6 space-y-4">
+                  <div className="space-y-2">
+                    <div className="flex items-center justify-between">
+                      <h3 className="font-bold text-xl">VITA(VIrtual Teaching Application)</h3>
+                      <Badge className="bg-vibrant-teal hover:bg-vibrant-teal/90">Mobile</Badge>
+                    </div>
+                    <p className="text-muted-foreground">
+                      A mobile application designed to teach students their lessons in school digitally. Made when I was
+                      first starting to program mobile apps.
+                    </p>
+                  </div>
+                  <div className="flex flex-wrap gap-2">
+                    <Badge variant="secondary">Android Studio</Badge>
+                    <Badge variant="secondary">Java</Badge>
+                  </div>
+                  <div className="flex gap-2">
+                    <Button variant="outline" size="sm" className="gap-1" asChild>
+                      <Link href="https://github.com/alecxanderblade890/VITA" target="_blank">
+                        <ExternalLink className="h-4 w-4" />
+                        Demo
+                      </Link>
+                    </Button>
+                    <Button variant="outline" size="sm" className="gap-1" asChild>
+                      <Link href="https://github.com/alecxanderblade890/VITA" target="_blank">
+                        <Github className="h-4 w-4" />
+                        Code
+                      </Link>
+                    </Button>
+                  </div>
+                </CardContent>
+              </Card>
 
+              {/* Project 5 */}
+              <Card className="overflow-hidden hover:shadow-lg transition-shadow gradient-border">
+                <div className="relative aspect-video">
+                  <Image
+                    src="/images/siquijor_logo.png"
+                    alt="Siquijor Promotional Site"
+                    fill
+                    className="object-cover"
+                  />
+                </div>
+                <CardContent className="p-6 space-y-4">
+                  <div className="space-y-2">
+                    <div className="flex items-center justify-between">
+                      <h3 className="font-bold text-xl">Siquijor Promotional Site</h3>
+                      <Badge className="bg-vibrant-purple hover:bg-vibrant-purple/90">Web</Badge>
+                    </div>
+                    <p className="text-muted-foreground">
+                      An informational website to promote the beauty of Siquijor and to attract tourists to visit.
+                    </p>
+                  </div>
+                  <div className="flex flex-wrap gap-2">
+                    <Badge variant="secondary">HTML</Badge>
+                    <Badge variant="secondary">CSS</Badge>
+                    <Badge variant="secondary">JS</Badge>
+                  </div>
+                  <div className="flex gap-2">
+                    <Button variant="outline" size="sm" className="gap-1" asChild>
+                      <Link href="https://vigilant-lichterman-dba4ac.netlify.app/" target="_blank">
+                        <ExternalLink className="h-4 w-4" />
+                        Demo
+                      </Link>
+                    </Button>
+                    <Button variant="outline" size="sm" className="gap-1" asChild>
+                      <Link href="https://github.com/alecxanderblade890/Siquijor-Promotion-Site" target="_blank">
+                        <Github className="h-4 w-4" />
+                        Code
+                      </Link>
+                    </Button>
+                  </div>
+                </CardContent>
+              </Card>
+
+              {/* Project 6 */}
+              <Card className="overflow-hidden hover:shadow-lg transition-shadow gradient-border">
+                <div className="relative aspect-video">
+                  <Image src="/images/badyet_logo.png" alt="Badyet" fill className="object-cover" />
+                </div>
+                <CardContent className="p-6 space-y-4">
+                  <div className="space-y-2">
+                    <div className="flex items-center justify-between">
+                      <h3 className="font-bold text-xl">Badyet</h3>
+                      <Badge className="bg-vibrant-teal hover:bg-vibrant-teal/90">Mobile</Badge>
+                    </div>
+                    <p className="text-muted-foreground">
+                      A budgeting app for students to manage their everyday expenses.
+                    </p>
+                  </div>
+                  <div className="flex flex-wrap gap-2">
+                    <Badge variant="secondary">Dart</Badge>
+                    <Badge variant="secondary">Flutter</Badge>
+                    <Badge variant="secondary">Hive</Badge>
+                  </div>
+                  <div className="flex gap-2">
+                    <Button variant="outline" size="sm" className="gap-1" asChild>
+                      <Link href="https://github.com/alecxanderblade890/Badyet" target="_blank">
+                        <ExternalLink className="h-4 w-4" />
+                        Demo
+                      </Link>
+                    </Button>
+                    <Button variant="outline" size="sm" className="gap-1" asChild>
+                      <Link href="https://github.com/alecxanderblade890/Badyet" target="_blank">
+                        <Github className="h-4 w-4" />
+                        Code
+                      </Link>
+                    </Button>
+                  </div>
+                </CardContent>
+              </Card>          
+            </div>
             <div className="flex justify-center">
               <Button variant="outline" asChild className="gradient-border">
                 <Link href="https://github.com/alecxanderblade890?tab=repositories" target="_blank">

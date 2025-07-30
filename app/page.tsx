@@ -325,8 +325,93 @@ export default function Home() {
               </p>
             </div>
             <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+
               {/* Project 1 */}
             <Card className="overflow-hidden hover:shadow-lg transition-shadow gradient-border">
+                <div className="relative aspect-video">
+                  <Image
+                    src="/images/nextrade_logo.jpg"
+                    alt="Nextrade"
+                    fill
+                    className="object-cover"
+                  />
+                </div>
+                <CardContent className="p-6 space-y-4">
+                  <div className="space-y-2">
+                    <div className="flex items-center justify-between">
+                      <h3 className="font-bold text-xl">Nextrade</h3>
+                      <Badge className="bg-vibrant-orange hover:bg-vibrant-orange/90">Web App</Badge>
+                    </div>
+                    <p className="text-muted-foreground">
+                    Nextrade is a web application marketplace where users can barter items with one another—no money required! 
+                    Built with Laravel and Blade, Nextrade provides a seamless platform for community-driven bartering, allowing users to list items, browse available trades, and connect with potential trading partners.
+                    </p>
+                  </div>
+                  <div className="flex flex-wrap gap-2">
+                    <Badge variant="secondary">Laravel/Blade</Badge>
+                    <Badge variant="secondary">MySQL</Badge>
+                    <Badge variant="secondary">PHP</Badge>
+                    <Badge variant="secondary">Railway</Badge>
+                  </div>
+                  <div className="flex gap-2">
+                    <Button variant="outline" size="sm" className="gap-1" asChild>
+                      <Link href="https://nextrade-production.up.railway.app" target="_blank">
+                        <ExternalLink className="h-4 w-4" />
+                        Demo
+                      </Link>
+                    </Button>
+                    <Button variant="outline" size="sm" className="gap-1" asChild>
+                      <Link href="https://github.com/alecxanderblade890/Nextrade.git" target="_blank">
+                        <Github className="h-4 w-4" />
+                        Code
+                      </Link>
+                    </Button>
+                  </div>
+                </CardContent>
+              </Card>
+
+              {/* Project 2 */}
+              <Card className="overflow-hidden hover:shadow-lg transition-shadow gradient-border">
+                <div className="relative aspect-video">
+                  <Image src="/images/inkwell_logo.png" alt="Inkwell" fill className="object-cover" />
+                </div>
+                <CardContent className="p-6 space-y-4">
+                  <div className="space-y-2">
+                    <div className="flex items-center justify-between">
+                      <h3 className="font-bold text-xl">Inkwell</h3>
+                      <Badge className="bg-vibrant-orange hover:bg-vibrant-orange/90">Web App</Badge>
+                    </div>
+                    <p className="text-muted-foreground">
+                    Inkwell is an AI-powered web application built with Laravel that generates professional, personalized cover letters in seconds. 
+                    Simply upload your resume (PDF), paste a job description, and choose your preferred writing style.
+                    </p>
+                  </div>
+                  <div className="flex flex-wrap gap-2">
+                    <Badge variant="secondary">Laravel/Blade</Badge>
+                    <Badge variant="secondary">PHP</Badge>
+                    <Badge variant="secondary">Railway</Badge>
+                    <Badge variant="secondary">Gemini API</Badge>
+                  </div>
+                  <div className="flex gap-2">
+                  </div>
+                  <div className="flex gap-2">
+                    <Button variant="outline" size="sm" className="gap-1" asChild>
+                      <Link href="https://inkwell-production-94b8.up.railway.app/" target="_blank">
+                        <ExternalLink className="h-4 w-4" />
+                        Demo
+                      </Link>
+                    </Button>
+                    <Button variant="outline" size="sm" className="gap-1" asChild>
+                      <Link href="https://github.com/alecxanderblade890/Inkwell.git" target="_blank">
+                        <Github className="h-4 w-4" />
+                        Code
+                      </Link>
+                    </Button>
+                  </div>
+                </CardContent>
+              </Card>
+              {/* Project 3 */}
+              <Card className="overflow-hidden hover:shadow-lg transition-shadow gradient-border">
                 <div className="relative aspect-video">
                   <Image
                     src="/images/spotify_ai_logo.png"
@@ -339,7 +424,7 @@ export default function Home() {
                   <div className="space-y-2">
                     <div className="flex items-center justify-between">
                       <h3 className="font-bold text-xl">Spotify Playlist Generator</h3>
-                      <Badge className="bg-vibrant-purple hover:bg-vibrant-purple/90">Web</Badge>
+                      <Badge className="bg-vibrant-orange hover:bg-vibrant-orange/90">Web App</Badge>
                     </div>
                     <p className="text-muted-foreground">
                       A website that integrates Gemini API to generate and automatically add a playlist for you in your
@@ -368,48 +453,7 @@ export default function Home() {
                 </CardContent>
               </Card>
 
-              {/* Project 2 */}
-              <Card className="overflow-hidden hover:shadow-lg transition-shadow gradient-border">
-                <div className="relative aspect-video">
-                  <Image src="/images/inkwell_logo.png" alt="Inkwell" fill className="object-cover" />
-                </div>
-                <CardContent className="p-6 space-y-4">
-                  <div className="space-y-2">
-                    <div className="flex items-center justify-between">
-                      <h3 className="font-bold text-xl">Inkwell</h3>
-                      <Badge className="bg-vibrant-orange hover:bg-vibrant-orange/90">Web App</Badge>
-                    </div>
-                    <p className="text-muted-foreground">
-                    Inkwell is an AI-powered web application built with Laravel that generates professional, personalized cover letters in seconds. 
-                    Simply upload your resume (PDF), paste a job description, and choose your preferred writing style.
-                    </p>
-                  </div>
-                  <div className="flex flex-wrap gap-2">
-                    <Badge variant="secondary">Laravel</Badge>
-                    <Badge variant="secondary">PHP</Badge>
-                    <Badge variant="secondary">Railway</Badge>
-                    <Badge variant="secondary">Gemini API</Badge>
-                  </div>
-                  <div className="flex gap-2">
-                  </div>
-                  <div className="flex gap-2">
-                    <Button variant="outline" size="sm" className="gap-1" asChild>
-                      <Link href="https://inkwell-production-94b8.up.railway.app/" target="_blank">
-                        <ExternalLink className="h-4 w-4" />
-                        Demo
-                      </Link>
-                    </Button>
-                    <Button variant="outline" size="sm" className="gap-1" asChild>
-                      <Link href="https://github.com/alecxanderblade890/Inkwell.git" target="_blank">
-                        <Github className="h-4 w-4" />
-                        Code
-                      </Link>
-                    </Button>
-                  </div>
-                </CardContent>
-              </Card>
-
-              {/* Project 3 */}
+              {/* Project 4 */}
               <Card className="overflow-hidden hover:shadow-lg transition-shadow gradient-border">
                 <div className="relative aspect-video">
                   <Image src="/images/neurowarn_logo.png" alt="Neurowarn" fill className="object-cover" />
@@ -418,7 +462,7 @@ export default function Home() {
                   <div className="space-y-2">
                     <div className="flex items-center justify-between">
                       <h3 className="font-bold text-xl">Neurowarn(Thesis Project)</h3>
-                      <Badge className="bg-vibrant-green hover:bg-vibrant-green/90">Web</Badge>
+                      <Badge className="bg-vibrant-orange hover:bg-vibrant-orange/90">Web App</Badge>
                     </div>
                     <p className="text-muted-foreground">
                       An web app that warns the user of obstacles using EEG signals from the brain to be processed by an
@@ -447,7 +491,44 @@ export default function Home() {
                   </div>
                 </CardContent>
               </Card>
-              {/* Project 4 */}
+              
+              {/* Project 5 */}
+              <Card className="overflow-hidden hover:shadow-lg transition-shadow gradient-border">
+                <div className="relative aspect-video">
+                  <Image src="/images/badyet_logo.png" alt="Badyet" fill className="object-cover" />
+                </div>
+                <CardContent className="p-6 space-y-4">
+                  <div className="space-y-2">
+                    <div className="flex items-center justify-between">
+                      <h3 className="font-bold text-xl">Badyet</h3>
+                      <Badge className="bg-vibrant-teal hover:bg-vibrant-teal/90">Mobile</Badge>
+                    </div>
+                    <p className="text-muted-foreground">
+                      A budgeting app for students to manage their everyday expenses.
+                    </p>
+                  </div>
+                  <div className="flex flex-wrap gap-2">
+                    <Badge variant="secondary">Dart</Badge>
+                    <Badge variant="secondary">Flutter</Badge>
+                    <Badge variant="secondary">Hive</Badge>
+                  </div>
+                  <div className="flex gap-2">
+                    <Button variant="outline" size="sm" className="gap-1" asChild>
+                      <Link href="https://github.com/alecxanderblade890/Badyet" target="_blank">
+                        <ExternalLink className="h-4 w-4" />
+                        Demo
+                      </Link>
+                    </Button>
+                    <Button variant="outline" size="sm" className="gap-1" asChild>
+                      <Link href="https://github.com/alecxanderblade890/Badyet" target="_blank">
+                        <Github className="h-4 w-4" />
+                        Code
+                      </Link>
+                    </Button>
+                  </div>
+                </CardContent>
+              </Card>   
+              {/* Project 6 */}
               <Card className="overflow-hidden hover:shadow-lg transition-shadow gradient-border">
                 <div className="relative aspect-video">
                   <Image
@@ -488,85 +569,6 @@ export default function Home() {
                   </div>
                 </CardContent>
               </Card>
-
-              {/* Project 5 */}
-              <Card className="overflow-hidden hover:shadow-lg transition-shadow gradient-border">
-                <div className="relative aspect-video">
-                  <Image
-                    src="/images/siquijor_logo.png"
-                    alt="Siquijor Promotional Site"
-                    fill
-                    className="object-cover"
-                  />
-                </div>
-                <CardContent className="p-6 space-y-4">
-                  <div className="space-y-2">
-                    <div className="flex items-center justify-between">
-                      <h3 className="font-bold text-xl">Siquijor Promotional Site</h3>
-                      <Badge className="bg-vibrant-purple hover:bg-vibrant-purple/90">Web</Badge>
-                    </div>
-                    <p className="text-muted-foreground">
-                      An informational website to promote the beauty of Siquijor and to attract tourists to visit.
-                    </p>
-                  </div>
-                  <div className="flex flex-wrap gap-2">
-                    <Badge variant="secondary">HTML</Badge>
-                    <Badge variant="secondary">CSS</Badge>
-                    <Badge variant="secondary">JS</Badge>
-                  </div>
-                  <div className="flex gap-2">
-                    <Button variant="outline" size="sm" className="gap-1" asChild>
-                      <Link href="https://vigilant-lichterman-dba4ac.netlify.app/" target="_blank">
-                        <ExternalLink className="h-4 w-4" />
-                        Demo
-                      </Link>
-                    </Button>
-                    <Button variant="outline" size="sm" className="gap-1" asChild>
-                      <Link href="https://github.com/alecxanderblade890/Siquijor-Promotion-Site" target="_blank">
-                        <Github className="h-4 w-4" />
-                        Code
-                      </Link>
-                    </Button>
-                  </div>
-                </CardContent>
-              </Card>
-
-              {/* Project 6 */}
-              <Card className="overflow-hidden hover:shadow-lg transition-shadow gradient-border">
-                <div className="relative aspect-video">
-                  <Image src="/images/badyet_logo.png" alt="Badyet" fill className="object-cover" />
-                </div>
-                <CardContent className="p-6 space-y-4">
-                  <div className="space-y-2">
-                    <div className="flex items-center justify-between">
-                      <h3 className="font-bold text-xl">Badyet</h3>
-                      <Badge className="bg-vibrant-teal hover:bg-vibrant-teal/90">Mobile</Badge>
-                    </div>
-                    <p className="text-muted-foreground">
-                      A budgeting app for students to manage their everyday expenses.
-                    </p>
-                  </div>
-                  <div className="flex flex-wrap gap-2">
-                    <Badge variant="secondary">Dart</Badge>
-                    <Badge variant="secondary">Flutter</Badge>
-                    <Badge variant="secondary">Hive</Badge>
-                  </div>
-                  <div className="flex gap-2">
-                    <Button variant="outline" size="sm" className="gap-1" asChild>
-                      <Link href="https://github.com/alecxanderblade890/Badyet" target="_blank">
-                        <ExternalLink className="h-4 w-4" />
-                        Demo
-                      </Link>
-                    </Button>
-                    <Button variant="outline" size="sm" className="gap-1" asChild>
-                      <Link href="https://github.com/alecxanderblade890/Badyet" target="_blank">
-                        <Github className="h-4 w-4" />
-                        Code
-                      </Link>
-                    </Button>
-                  </div>
-                </CardContent>
-              </Card>          
             </div>
             <div className="flex justify-center">
               <Button variant="outline" asChild className="gradient-border">
